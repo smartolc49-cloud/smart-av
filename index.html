@@ -3,97 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart-AV | Оборудование для конференций</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background: #f5f7fa; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        :root { --blue: #1a365d; --red: #e63946; --gray: #6c757d; }
-        
-        header { background: white; padding: 20px 0; border-bottom: 3px solid var(--red); text-align: center; }
-        .logo { font-size: 36px; font-weight: bold; margin-bottom: 10px; }
-        .smart { color: var(--blue); }
-        .av { color: var(--red); }
-        .tagline { color: var(--gray); font-size: 18px; }
-        
-        main { padding: 40px 0; }
-        h1 { color: var(--blue); text-align: center; margin-bottom: 30px; font-size: 32px; }
-        
-        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 40px 0; }
-        .product-card { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; border-top: 4px solid var(--blue); }
-        .product-card h3 { color: var(--blue); margin: 15px 0; font-size: 20px; }
-        .product-card p { color: var(--gray); font-size: 15px; }
-        
-        .quote { background: var(--blue); color: white; padding: 40px; border-radius: 10px; text-align: center; margin: 50px 0; }
-        .quote-text { font-size: 24px; font-style: italic; margin-bottom: 15px; }
-        .quote-subtext { font-size: 16px; opacity: 0.9; }
-        
-        footer { background: var(--blue); color: white; padding: 30px 0; text-align: center; border-top: 5px solid var(--red); }
-        .footer-logo { font-size: 28px; font-weight: bold; margin-bottom: 20px; }
-        .website-link { display: inline-block; background: var(--red); color: white; padding: 12px 25px; text-decoration: none; border-radius: 25px; font-size: 18px; margin: 15px 0; }
-        .website-link:hover { background: #d32f2f; }
-        .contacts { margin-top: 20px; color: rgba(255,255,255,0.8); font-size: 16px; }
-        
-        @media (max-width: 768px) {
-            .products { grid-template-columns: 1fr; }
-            .quote-text { font-size: 20px; }
-            h1 { font-size: 26px; }
-        }
-    </style>
+    <title>Каталог Smart-AV | Выбор бренда</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
+    <!-- Шапка с курсом -->
+    <div class="header-top">
         <div class="container">
-            <div class="logo"><span class="smart">Smart</span><span class="av">-AV</span></div>
-            <p class="tagline">Профессиональные решения для видеоконференций</p>
+            <div class="currency-info">
+                <span>💵 Курс USD: <strong id="usd-rate">-</strong> ₽</span>
+                <span>⏱️ Обновлено: <span id="update-time">-</span></span>
+                <button class="refresh-btn" onclick="updateCurrency()"><i class="fas fa-sync-alt"></i> Обновить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основная навигация -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1><span class="smart">Smart</span><span class="av">-AV</span> Каталог</h1>
+                <p class="tagline">Профессиональное оборудование для конференц-связи</p>
+            </div>
+            <nav class="brand-tabs" id="brandTabs">
+                <!-- Вкладки будут добавляться динамически из script.js -->
+                <!-- Пример: <a href="#smartmedia" class="tab active">SmartMedia</a> -->
+            </nav>
         </div>
     </header>
-    
+
     <main class="container">
-        <h1>Решения для современных коммуникаций</h1>
-        
-        <div class="products">
-            <div class="product-card">
-                <h3>Спикерфоны</h3>
-                <p>Высококачественные устройства для четкой передачи голоса</p>
+        <!-- "Хлебные крошки" -->
+        <nav class="breadcrumbs">
+            <a href="index.html">Главная</a> / <span>Все бренды</span>
+        </nav>
+
+        <h2>Выберите бренд</h2>
+        <p>Нажмите на плитку бренда, чтобы увидеть весь ассортимент его продукции.</p>
+
+        <!-- Сетка брендов -->
+        <div class="brands-grid" id="brandsGrid">
+            <!-- Карточки брендов будут добавляться динамически из script.js -->
+            <!-- Пример структуры:
+            <div class="brand-card" data-brand="smartmedia">
+                <div class="brand-logo">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <h3>SmartMedia</h3>
+                <p>Конференц-системы, процессоры</p>
             </div>
-            <div class="product-card">
-                <h3>Камеры</h3>
-                <p>Панорамные и PTZ-камеры для видеоконференций</p>
-            </div>
-            <div class="product-card">
-                <h3>Конференц-системы</h3>
-                <p>Комплексные решения для проведения совещаний</p>
-            </div>
-            <div class="product-card">
-                <h3>Микрофоны</h3>
-                <p>Направленные и настольные микрофоны</p>
-            </div>
-            <div class="product-card">
-                <h3>Акустические системы</h3>
-                <p>Мощные системы для идеального звучания</p>
-            </div>
-            <div class="product-card">
-                <h3>Профессиональные панели</h3>
-                <p>Сенсорные панели управления AV-системами</p>
-            </div>
-        </div>
-        
-        <div class="quote">
-            <p class="quote-text">Лучше один раз увидеть, чем прочитать 100 отзывов в интернете</p>
-            <p class="quote-subtext">Приглашаем на демонстрацию оборудования</p>
+            -->
         </div>
     </main>
-    
+
     <footer>
         <div class="container">
-            <div class="footer-logo"><span class="smart">Smart</span><span class="av">-AV</span></div>
-            <a href="https://smart-av.ru/" class="website-link" target="_blank">smart-av.ru</a>
-            <p class="contacts">
-                Свяжитесь с нами для консультации и демонстрации оборудования<br>
-                Телефон: +7 (XXX) XXX-XX-XX | Email: info@smart-av.ru
-            </p>
+            <p>© 2026 Smart-AV. Все права защищены. <a href="https://smart-av.ru/">smart-av.ru</a></p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Инициализация главной страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            initBrandsPage(); // Функция, которая заполнит сетку брендов
+        });
+    </script>
 </body>
 </html>
