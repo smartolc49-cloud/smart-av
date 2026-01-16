@@ -1,0 +1,100 @@
+/* Стили для интерактивных плиток брендов на главной */
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+.brand-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.brand-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border-color: #1a365d; /* Smart-AV синий */
+}
+.brand-logo {
+    font-size: 48px;
+    color: #1a365d;
+    margin-bottom: 15px;
+}
+
+/* Стили для навигационных вкладок брендов */
+.brand-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 20px;
+    border-bottom: 2px solid #eee;
+}
+.brand-tabs .tab {
+    padding: 12px 24px;
+    background: #f8f9fa;
+    border: none;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: #6c757d;
+}
+.brand-tabs .tab:hover {
+    background: #e9ecef;
+    color: #1a365d;
+}
+.brand-tabs .tab.active {
+    background: #1a365d;
+    color: white;
+}
+
+/* Стили для карточек товаров */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+.product-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-left: 5px solid #e63946; /* Акцентная красная полоса */
+    transition: transform 0.3s ease;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+.details-btn {
+    display: inline-block;
+    background: #1a365d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+}
+.details-btn:hover {
+    background: #152642;
+}
+.comparison-link {
+    display: inline-block;
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
